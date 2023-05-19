@@ -3,12 +3,18 @@ const container = document.querySelector('.container');
 
 
 
-const createGrid = (num = 256) => {
+const createGrid = (rows = 16, cols = 16) => {
     
-    for (let i = 0; i < num; i++) {
-        const div = document.createElement('div');
-        div.classList.add('grid');
-        container.appendChild(div);
+    for (let i = 0; i < rows; i++) {
+        const row = document.createElement('div');
+        row.classList.add('rows');
+        container.appendChild(row);
+
+        for(let j = 0; j < cols; j++) {
+            const col = document.createElement('div');
+            col.classList.add('cols');
+            row.appendChild(col);
+        }
     }
     
 }
