@@ -50,8 +50,8 @@ input {
 .container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  justify-content: center;
+  margin: 10rem 2rem;
 }
 
 .cols {
@@ -62,7 +62,6 @@ input {
 
 .rows {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }/*# sourceMappingURL=styles.css.map */
