@@ -43,32 +43,65 @@ table{
 }
 
 input{
-    -webkit-appearance: none;
     border-radius: 0;
 }
 // END RESET
+body {
+    text-align: center;
+    height: 100vh;
+}
 
+header {
+    padding: 1rem;
+}
+h1 {
+    font-size: 3rem;
+    margin: 2rem auto; 
+}
 
 
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    margin: 10rem 2rem;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 2rem auto;
 }
 
 .cols {
-    border: 1px solid black;
-    width: 10px;
-    height: 10px;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    
 }
 
 .rows {
     display: flex;
-    flex-direction: column;
-
-
-    justify-content: center;
+    flex-direction: row;
+    width: 100%;
     
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+
+    
+    div {
+      padding: 1rem;  
+    }
+
+    div:nth-child(2) {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        
+    }
+}
+
+.splatter > input {
+
 }
