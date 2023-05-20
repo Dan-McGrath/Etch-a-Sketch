@@ -22,8 +22,16 @@ createGrid();
 
 const cell = document.querySelectorAll('.cols');
 const cellArray = Array.from(cell)
-const changeCell = (e) => {
-    e.target.style.backgroundColor = 'black';
+
+const changeCell = (e, color = 'black') => {
+    if (e.target.dataset.active === 'true') {
+        e.target.dataset.active = 'false';
+        e.target.classList.remove(color)
+    } else {
+        e.target.dataset.active = 'true';
+        e.target.classList.add(color)
+    }
+
 }
 
 
