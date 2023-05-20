@@ -9,8 +9,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-
+    <header>
+        <h1>Etch-a-Sketch</h1>
+    </header>
+    <div class="container"></div>
+    <div class="buttons">
+        <div class="pick-size">
+            
+            <button>Create Pixels</button>
+        </div>
+        <div class="pick-color">
+            <select name="color" id="pick-color" >
+            </select>
+           <button>Pick Color</button> 
+        </div>
+        <div class="splatter">
+            <input type="checkbox" name="splatter" id="active" >
+            <label for="active">Activate!</label>
+            <input type="checkbox" name="splatter" id="not-active">
+            <label for="not-active">Deactivate!</label>
+            <div>
+                <button class="random-color" title="Get random color each click">Splatter</button> 
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
