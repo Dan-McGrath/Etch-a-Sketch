@@ -102,26 +102,28 @@ h1 {
     }
 }
 
-.black {
-    background-color: black;
+.cols[data-color='white'] {
+    background-color: #fefefe;
 }
-
-.grey {
+.cols[data-color='black'] {
+    background-color: #000000;
+}
+.cols[data-color='grey'] {
     background-color: grey;
 }
-
-.blue {
+.cols[data-color='blue'] {
     background-color: blue;
 }
-.darkGreen {
+.cols[data-color='green'] {
     background-color: darkgreen;
 }
-.fireBrick {
+.cols[data-color='red'] {
     background-color: firebrick;
 }
-.gold {
+.cols[data-color='yellow'] {
     background-color: gold;
 }
+
 
 option {
     outline: none;
