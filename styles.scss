@@ -50,14 +50,21 @@ input{
 body {
     text-align: center;
     height: 100vh;
+    background: hsla(0, 0%, 0%, 0.459);
 }
 
 header {
     padding: 1rem;
+    
 }
 h1 {
     font-size: 3rem;
-    margin: 2rem auto; 
+    margin: auto; 
+    color: palegreen;
+}
+
+h2 {
+    color: palegreen
 }
 
 
@@ -67,7 +74,36 @@ h1 {
     width: 300px;
     height: 300px;
     border: 1px solid black;
-    margin: 2rem auto;
+    margin: 1rem auto;
+    background: #fefefe;
+}
+
+@media screen and (min-width: 550px) {
+    .container {
+        width: 525px;
+        height: 525px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 800px;
+        height: 800px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        height: 1000px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+        height: 1200px;
+    }
 }
 
 .cols {
@@ -102,6 +138,8 @@ h1 {
     }
 
 }
+
+
 
 select {
     width: 50%;
@@ -156,4 +194,152 @@ option[data-color='gold'] {
 
 option {
     outline: none;
+}
+
+
+.pick-size {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+
+.pick-color {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 75%;
+
+    h2 {
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+    select {
+        width: 100%;
+        color: white;
+        overflow: scroll;
+    }
+}
+
+button {
+    background: hsla(0, 0%, 0%, 0.603);
+    border: 1px solid black;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    box-shadow: 0 0 15px 5px black;
+    transition: all 0.1s ease-in-out;
+    color: palegreen;
+}
+
+button[data-active='true'] {
+    background-color: palegreen;
+    color: black;
+}
+
+#create-grid:active {
+    background-color: palegreen;
+    box-shadow: 0 0 10px 8px;
+    color: black;
+    font-weight: bold;
+}
+
+
+label {
+    color: palegreen;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 550px) {
+    .buttons {
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        div:nth-child(2) {
+            border: 0;
+            border-right: 1px solid black;
+            border-left: 1px solid black; 
+            max-width: 300px;
+        }
+    
+    }
+
+    button {
+        padding: 0.8rem;
+    }
+    h1 {
+        font-size: 6rem;
+    }
+
+}
+
+
+@media screen and (min-width: 1000px) {
+    button {
+        font-size: 2rem;
+    }
+
+    .pick-color {
+        h2 {
+            width: 100%;
+            font-size: 2.2rem;
+        }
+    
+        select {
+            height: 50px;
+        }
+    }
+
+    label {
+        font-size: 3rem;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1300px) {
+    .pick-color {
+        gap: 2rem;
+        padding: 5rem;
+        h2 {
+            width: 100%;
+            font-size: 3rem;
+        }
+    
+        select {
+            height: 50px;
+        }
+    }
+
+    .pick-size {
+        gap: 3rem;
+
+        label {
+            font-size: 5rem;
+        }
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1300px;
+        
+        div:nth-child(2) {
+            border: 0;
+            border-right: 1px solid black;
+            border-left: 1px solid black; 
+            max-width: 500px;
+            padding: 2rem 5rem;
+        }
+    }
+
+
+    button {
+        font-size: 2.4rem;
+    }
+    
+    
 }
