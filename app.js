@@ -54,6 +54,12 @@ const createGrid = (num = 16) => {
     } 
 }
 
+const clearGrid = () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }    
+}
+
 // Eraser
 
 const eraserButton = document.getElementById('eraser');
@@ -85,6 +91,22 @@ const getColor = (arr) => {
     } 
 }
 
+const size = document.getElementById('grid');
+const sizeLabel = document.getElementById('grid-label');
+const grid = document.getElementById('create-grid');
 
+const getSize = () => {
+    sizeLabel.dataset.value = size.value;
+    sizeLabel.textContent = sizeLabel.dataset.value;
+
+}
+
+const changeGrid = () => {
+    clearGrid();
+    createGrid(size.value);
+}
+
+grid.addEventListener('click', changeGrid)
+size.addEventListener('input', getSize)
 
 getColor(defaultColors);
