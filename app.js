@@ -1,5 +1,4 @@
 const container = document.querySelector('.container');
-const colorPicker = document.getElementById('pick-color')
 const defaultColors = [
     'black',
     'grey',
@@ -10,21 +9,28 @@ const defaultColors = [
 ]
 
 
+const setColor = () => {
+    let newColor = colorPicker.value;
+    colorPicker.style.backgroundColor = colorPicker.value;
+    return newColor
+}
 
 //allow user to click and drag colors
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
-
+//add default color to grid square
 const addColor = (e, color = 'black') => {
     if(e.type === 'mouseover' && !mouseDown) {
         return
     }
+    color = setColor();
     e.target.dataset.active = 'true';
     e.target.dataset.color = color;
 }
 
+//remove color from grid squre
 const removeColor = (e) => {
     if (e.type === 'mouseover' && !mouseDown || eraserButton.dataset.active === 'false') {
         return
@@ -35,6 +41,8 @@ const removeColor = (e) => {
     }
     
 }
+
+//create defualt grid
 
 const createGrid = (num = 16) => {
     for (let i = 0; i < num; i++) {
@@ -54,42 +62,16 @@ const createGrid = (num = 16) => {
     } 
 }
 
+// call default grid
+createGrid();
+
 const clearGrid = () => {
     while (container.firstChild) {
-        container.removeChild(container.firstChild);
+        container.removeChild(container.firstChild)
     }    
 }
 
-// Eraser
-
-const eraserButton = document.getElementById('eraser');
-const eraser = () => {
-    if (eraserButton.dataset.active === 'false') {
-        eraserButton.dataset.active = 'true';
-        
-    } else {
-        eraserButton.dataset.active = 'false';
-    }
-}
-
-eraserButton.addEventListener('click', eraser);
-
-
-createGrid();
-
-const cell = document.querySelectorAll('.cols');
-
-
-
-
-const getColor = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        const option = document.createElement('option');
-        option.classList.add(arr[i]);
-        colorPicker.appendChild(option)
-
-    } 
-}
+// change grid size
 
 const size = document.getElementById('grid');
 const sizeLabel = document.getElementById('grid-label');
@@ -106,7 +88,46 @@ const changeGrid = () => {
     createGrid(size.value);
 }
 
-grid.addEventListener('click', changeGrid)
-size.addEventListener('input', getSize)
+grid.addEventListener('click', changeGrid);
+size.addEventListener('input', getSize);
 
+// Eraser
+
+const eraserButton = document.getElementById('eraser');
+const eraser = () => {
+    if (eraserButton.dataset.active === 'false') {
+        eraserButton.dataset.active = 'true';
+        
+    } else {
+        eraserButton.dataset.active = 'false';
+    }
+}
+
+eraserButton.addEventListener('click', eraser);
+
+
+
+const cell = document.querySelectorAll('.cols');
+
+
+// Color 
+const colorPicker = document.getElementById('pick-color');
+const pickColorBtn = document.getElementById('pick-color-btn');
+//console.log(colorPicker)
+
+
+
+// create options based on default colors array
+const getColor = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        const option = document.createElement('option');
+        option.dataset.color = arr[i];
+        option.value = arr[i];
+        colorPicker.appendChild(option)
+    } 
+}
+
+//
+//console.log(setColor())
 getColor(defaultColors);
+colorPicker.addEventListener('change', setColor)
