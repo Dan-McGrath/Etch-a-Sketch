@@ -9,6 +9,8 @@ const defaultColors = [
     'gold'
 ]
 
+
+
 //allow user to click and drag colors
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -20,11 +22,18 @@ const addColor = (e, color = 'black') => {
         return
     }
     e.target.dataset.active = 'true';
-    e.target.classList.add(color) 
+    e.target.dataset.color = color;
 }
 
-const removeColor = (e, color) => {
-    e.target.classList.remove(color);
+const removeColor = (e) => {
+    if (e.type === 'mouseover' && !mouseDown || eraserButton.dataset.active === 'false') {
+        return
+    }
+    if (eraserButton.dataset.active === 'true') {
+        e.target.dataset.active = 'false';
+        e.target.dataset.color = 'white';
+    }
+    
 }
 
 const createGrid = (num = 16) => {
@@ -38,10 +47,26 @@ const createGrid = (num = 16) => {
             col.classList.add('cols');
             row.appendChild(col);
             col.addEventListener('mousedown', addColor);
-            col.addEventListener('mouseover', addColor)
+            col.addEventListener('mouseover', addColor);
+            col.addEventListener('mousedown', removeColor);
+            col.addEventListener('mouseover', removeColor);
         }
     } 
 }
+
+// Eraser
+
+const eraserButton = document.getElementById('eraser');
+const eraser = () => {
+    if (eraserButton.dataset.active === 'false') {
+        eraserButton.dataset.active = 'true';
+        
+    } else {
+        eraserButton.dataset.active = 'false';
+    }
+}
+
+eraserButton.addEventListener('click', eraser);
 
 
 createGrid();
