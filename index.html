@@ -15,8 +15,9 @@
     <div class="container"></div>
     <div class="buttons">
         <div class="pick-size">
-            
-            <button>Create Grid</button>
+            <label for="grid" data-value="16" id="grid-label">16</label>
+            <input type="range" name="grid" id="grid" min="1" max="100" value="16">
+            <button data-active="true" data-size="16" id="create-grid">Create Grid</button>
         </div>
         <div class="pick-color">
             <select name="color" id="pick-color" >
