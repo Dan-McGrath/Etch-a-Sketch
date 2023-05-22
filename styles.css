@@ -96,6 +96,38 @@ h1 {
   border-bottom: 1px solid black;
 }
 
+select {
+  width: 50%;
+}
+
+select {
+  background-color: black;
+}
+
+option[data-color=black] {
+  background-color: #000000;
+}
+
+option[data-color=grey] {
+  background-color: grey;
+}
+
+option[data-color=blue] {
+  background-color: blue;
+}
+
+option[data-color=darkGreen] {
+  background-color: darkgreen;
+}
+
+option[data-color=fireBrick] {
+  background-color: firebrick;
+}
+
+option[data-color=gold] {
+  background-color: gold;
+}
+
 .cols[data-color=white] {
   background-color: #fefefe;
 }
@@ -112,15 +144,15 @@ h1 {
   background-color: blue;
 }
 
-.cols[data-color=green] {
+.cols[data-color=darkGreen] {
   background-color: darkgreen;
 }
 
-.cols[data-color=red] {
+.cols[data-color=fireBrick] {
   background-color: firebrick;
 }
 
-.cols[data-color=yellow] {
+.cols[data-color=gold] {
   background-color: gold;
 }
 

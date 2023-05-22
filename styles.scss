@@ -46,6 +46,7 @@ input{
     border-radius: 0;
 }
 // END RESET
+
 body {
     text-align: center;
     height: 100vh;
@@ -97,9 +98,37 @@ h1 {
 
     div:nth-child(2) {
         border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        
+        border-bottom: 1px solid black; 
     }
+
+}
+
+select {
+    width: 50%;
+
+}
+
+select {
+    background-color: black;
+}
+
+option[data-color='black'] {
+    background-color: #000000;
+}
+option[data-color='grey'] {
+    background-color: grey;
+}
+option[data-color='blue'] {
+    background-color: blue;
+}
+option[data-color='darkGreen'] {
+    background-color: darkgreen;
+}
+option[data-color='fireBrick'] {
+    background-color: firebrick;
+}
+option[data-color='gold'] {
+    background-color: gold;
 }
 
 .cols[data-color='white'] {
@@ -114,13 +143,13 @@ h1 {
 .cols[data-color='blue'] {
     background-color: blue;
 }
-.cols[data-color='green'] {
+.cols[data-color='darkGreen'] {
     background-color: darkgreen;
 }
-.cols[data-color='red'] {
+.cols[data-color='fireBrick'] {
     background-color: firebrick;
 }
-.cols[data-color='yellow'] {
+.cols[data-color='gold'] {
     background-color: gold;
 }
 
